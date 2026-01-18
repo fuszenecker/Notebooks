@@ -1,0 +1,45 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"csharp"},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"value"}]}}
+
+#!markdown
+
+# MifMuf - minimlis és maximális frekveniák
+
+#!markdown
+
+Alapadatok:
+
+#!csharp
+
+var f_0f2 = 7.0 /* MHz */;
+var f_min = 1.8 /* MHz */;
+
+var h_F2 = 220 /* km */;
+
+var alfa_min = 15 /* deg */;
+var alfa_max = 25 /* deg */;
+
+#!markdown
+
+Használható frekvenciák:
+
+#!csharp
+
+var alfa /* rad */ = (alfa_min + alfa_max) / 2.0 * Math.PI / 180.0; 
+var MUF = f_0f2 / Math.Sin(alfa);
+var MIF = f_min / Math.Sin(alfa);
+
+Console.WriteLine($"MIF = {MIF:f2} MHz, MUF = {MUF:f2} MHz");
+
+#!markdown
+
+Távolságok
+
+#!csharp
+
+var s_min /* km */ = 2.0 * h_F2 / Math.Tan(alfa_max * Math.PI / 180.0);
+var s_opt /* km */ = 2.0 * h_F2 / Math.Tan((alfa_min + alfa_max) / 2.0 * Math.PI / 180.0);
+var s_max /* km */ = 2.0 * h_F2 / Math.Tan(alfa_min * Math.PI / 180.0);
+
+Console.WriteLine($"s_min = {s_min:f2} km, s_opt = {s_opt:f2} km, s_max = {s_max:f2} km");
