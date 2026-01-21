@@ -4,7 +4,7 @@
 
 #!markdown
 
-# MifMuf - minimlis és maximális frekveniák
+# MifMuf – minimlis és maximális frekveniák
 
 #!markdown
 
@@ -12,13 +12,13 @@ Alapadatok:
 
 #!csharp
 
-var f_0f2 = 7.0 /* MHz */;
+var f_0f2 = 3.5 /* MHz */;
 var f_min = 1.8 /* MHz */;
 
 var h_F2 = 220 /* km */;
 
 var alfa_min = 15 /* deg */;
-var alfa_max = 25 /* deg */;
+var alfa_max = 40 /* deg */;
 
 #!markdown
 
